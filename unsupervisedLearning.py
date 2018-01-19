@@ -13,6 +13,11 @@ centers = [[1, 1, 1], [5, 5, 5], [10, 11, 5]]
 
 X, _ = make_blobs(n_samples=50, centers=centers, cluster_std=1, n_features=3)
 
+# for i in range(len(X)):
+# 	ax.scatter(X[i][0], X[i][1], X[i][2], c='black')
+# plt.show()
+# exit()
+
 
 kmeans = KMeans(n_clusters=3)
 kmeans.fit(X)
