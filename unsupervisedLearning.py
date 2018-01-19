@@ -2,7 +2,6 @@ import numpy as np
 from sklearn.cluster import MeanShift as ms
 from sklearn.cluster import AffinityPropagation as ap
 from sklearn.cluster import KMeans
-
 from sklearn.datasets.samples_generator import make_blobs
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
