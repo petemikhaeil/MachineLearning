@@ -23,31 +23,27 @@ test = [
 ]
 
 
-train += '(\'Pete is great.\', \'pos\')'
-
 cl = NaiveBayesClassifier(train)
 
 # Classify some text
-print(cl.classify("Their burgers are amazing."))  # "pos"
-print(cl.classify("I don't like their pizza."))   # "neg"
-print(cl.classify("I hate Skyrim."))
+print("Their burgers are amazing is a", cl.classify("Their burgers are amazing."), "statement")  # "pos"
+print("I don't like their pizza is a", cl.classify("I don't like their pizza."), "statement")   # "neg"
 
-probability = cl.prob_classify("I hate Skyrim and Harry Potter.")
-print(probability.max())
-print(round(probability.prob("neg"), 2))
-exit()
+print("\n")
 # Classify a TextBlob
 blob = TextBlob("The beer was amazing. But the hangover was horrible. "
                 "My boss was not pleased.", classifier=cl)
 print(blob)
-print(blob.classify())
-
+print("That statement is:", blob.classify())
+print("\n")
+print("Sentence by Sentence")
 for sentence in blob.sentences:
     print(sentence)
     print(sentence.classify())
 
 # Compute accuracy
-print("Accuracy: {0}".format(cl.accuracy(test)))
 
+print("Accuracy: {0}".format(cl.accuracy(test)))
+print("\n")
 # Show 5 most informative features
 cl.show_informative_features(5)
