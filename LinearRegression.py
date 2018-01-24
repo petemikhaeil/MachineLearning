@@ -6,11 +6,13 @@ from sklearn.datasets import load_boston
 import matplotlib.pyplot as plt
 
 # Random Data I made up to give a nice shape
-x = [i for i in range(17)]
-y = [0, 5, 16, 18, 21, 25, 27.5, 28, 29, 32, 30, 28, 31, 29, 30, 29.5, 30]
+x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 15, 17]
+y = [0, 5, 16, 18, 21, 25, 27.5, 28, 29, 31, 29, 30, 29.5, 30]
 
 # Plot these points
 plt.scatter(x, y, color='black')
+plt.xlabel('Bee Size')
+plt.ylabel('Bee Distance Flown')
 plt.show()
 
 # Have to replot the points everytime
@@ -19,6 +21,8 @@ plt.scatter(x, y, color='black')
 pl1 = np.polyfit(x, y, 1)
 plt.plot(x, np.polyval(pl1, x), color='blue', label='Order 1')
 plt.legend()
+plt.xlabel('Bee Size')
+plt.ylabel('Bee Distance Flown')
 plt.show()
 
 plt.scatter(x, y, color='black')
@@ -26,6 +30,8 @@ plt.scatter(x, y, color='black')
 pl2 = np.polyfit(x, y, 3)
 plt.plot(x, np.polyval(pl2, x), color='orange', label='Order 3')
 plt.legend()
+plt.xlabel('Bee Size')
+plt.ylabel('Bee Distance Flown')
 plt.show()
 
 plt.scatter(x, y, color='black')
@@ -33,5 +39,7 @@ plt.scatter(x, y, color='black')
 pl3 = np.polyfit(x, y, 13)
 plt.plot(x, np.polyval(pl3, x), color='purple', label='Order 13')
 plt.legend()
+plt.xlabel('Bee Size')
+plt.ylabel('Bee Distance Flown')
 plt.show()
 

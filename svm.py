@@ -11,7 +11,7 @@ x, y = digits.data[:-10], digits.target[:-10]
 clf.fit(x, y)
 
 
-print('Prediction: ', clf.predict(digits.data[[1]]))
+print('Prediction: ', clf.predict(digits.data[[7]]))
 
-plt.imshow(digits.images[1], cmap=plt.cm.gray_r, interpolation="nearest")
+plt.imshow(digits.images[7], cmap=plt.cm.gray_r, interpolation="nearest")
 plt.show()
